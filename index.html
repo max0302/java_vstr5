@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java script intro</title>
+</head>
+<style>
+    body{
+        background: black;
+    }
+    h3{
+        color: white;
+    }
+    h3:nth-of-type(odd){
+        color: deeppink;
+    }
+</style>
+<body>
+<script>
+    //Объекты в функции
+    function createUser(pName,pAge)
+    {
+    return{
+        name: pName,
+        age: pAge,
+        display: function () {
+        document.write(`<h3>Name is  ${this.name}, Age  ${this.age}</h3>`);
+        },
+    }
+    }
+    function  createCar (pName, pYear) {
+        return{
+            name: pName,
+            yera: pYear
+        }
+    }
+    let tom = createUser('Tom', 26);
+    let fermersky = createUser('Fermer', 19);
+    tom.display();
+    fermersky.display();
+
+
+    function somefunc() {
+
+    }
+    function func() {
+
+    }
+
+    //конструктор
+    function User (pName, pAge)
+    {
+        let password = 'qwerty';
+        this.name=pName;
+        this.age=pAge;
+        this.display = function () {
+            document.write(`<h3>Name is  ${this.name}, Age  ${this.age}</h3>`);
+        };
+        this.getPassword = function () {
+            return password;
+        };
+        this.setPassword = function (pass) {
+            if (typeof pass === 'string' && pass.length >= 6){
+                password = pass;
+            }
+            else {
+                console.log('ты не прав!');
+            }
+        }
+    }
+
+
+
+    function Employ(name, age, company)
+    {
+        User.call(this, name, age);
+        this.company = 'Hooli';
+        display = function () {
+            document.write(`<h3>Name is  ${this.name}, Age  ${this.age}, Company: ${this.company}</h3>`);
+        }
+    }
+    Employ.prototype = Object.create(User.prototype);
+
+    let dimon8139 = new Employ('Dimon', 40, 'Apple');
+
+
+    function UserEmp(name, age)
+    {
+        this.name = name;
+        this.age = age;
+    };
+
+    User.prototype.group = 'st2017';
+    User.prototype.hello = function () {
+        document.write(`<h3> Hello i am ${this.name}</h3>`);
+    }
+
+    let avaritis = new User('Avaritis', 16);
+    avaritis.group = 'ps2019';
+    let firs99 = new User('Firs99', 21);
+    let max0302 = new User('MadMax', 38);
+
+    console.log(avaritis.name);
+    console.log(avaritis instanceof UserEmp);
+    console.log(avaritis instanceof User);
+    avaritis.display();
+    console.log(firs99.group);
+    console.log(avaritis.group);
+    max0302.hello();
+    console.log(avaritis.password);
+
+    console.log(avaritis.getPassword());
+    console.log(avaritis.setPassword('123456'));
+    console.log(avaritis.getPassword());
+
+    // Функция как объект
+    let squery = new Function('n', 'return n*n');
+    console.log(squery(5));
+
+    // Свойства: arguments, length, caller, name, prototype, (методы: call, apply)
+    function display(work, exp)
+    {
+        console.log('Your name is ' + this.name + ' work in ' + work + ', expiriance ' + exp);
+    }
+    Function.prototype.program = 'GreatDurjeskyIncCorp';
+    console.log(display.program);
+    console.log(func.program);
+
+    display.call(firs99, 'Google', 2);
+    display.call(max0302, 'Google', 2);
+    display.call(null, 'Google', 2);
+
+    display.apply(max0302, ['hooli', 2]);
+
+    // Наследование
+    console.log(dimon8139.getPassword());
+
+    //Декомпозиция
+    let user = {
+        name:  'Tom',
+        age: 34,
+        exp: 4,
+    }
+    // let age = user.age;
+    let{name, age, exp} = user;
+
+    let users = ['firs99', 'greek', 'skyssky', 'max'];
+    let[a,b,c]=users;
+    let[,,,max]=users;
+
+
+
+    //ecmo script 6
+    class Person
+    {
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        display(){
+            console.log(this.name, this.age);
+        }
+    }
+    class Employer extends Person
+    {
+        constructor(name,age,company) {
+            super(name,age);
+            this.company = company;
+        }
+        display(){
+            super.display();
+            console.log(this.company);
+        }
+        work(){
+            console.log('i am hard worker');
+        }
+    }
+    let Nastya = new Employer('Anastasiia', 21, 'Tesla Company');
+    Nastya.display();
+    Nastya.work();
+</script>
+</body>
+</html>

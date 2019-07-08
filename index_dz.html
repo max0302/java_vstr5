@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java vstr5 home work</title>
+</head>
+<body>
+    <script>
+        class Product
+        {
+            constructor(name, quantity, bysale){
+                this.name=name;
+                this.quantity=quantity;
+                this.bysale=bysale;
+            }
+
+            display(){
+                console.log(this.name, this.quantity, this.bysale);
+            }
+        }
+
+        let products = [];
+        p0 = new Product ('product1', 10, true);
+
+        p1 = new Product ('product2', 20, true);
+
+        p2 = new Product ('product3', 30, true);
+        products.push(p0);
+        products.push(p1);
+        products.push(p2);
+        products[0].display();
+
+        for(item in products){
+            item.display();
+        }
+
+    </script>
+</body>
+</html>
