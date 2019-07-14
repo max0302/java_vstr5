@@ -6,34 +6,256 @@
 </head>
 <body>
     <script>
-        class Product
+        // <!-- Создать массив «Список покупок». Каждый элемент массива -->
+        // <!-- является объектом, который содержит название продукта, необ- -->
+        // <!-- ходимое количество и куплен или нет. Написать несколько функ- -->
+        // <!-- ций для работы с таким массивом. -->
+        // <!-- 1. Вывод всего списка на экран таким образом, чтобы сначала -->
+        // <!-- шли некупленные продукты, а потом – купленные. -->
+        // <!-- 2. Добавление покупки в список. Учтите, что при добавлении -->
+        // <!-- покупки с уже существующим в списке продуктом, необ- -->
+        // <!-- ходимо увеличивать количество в существующей покупке, -->
+        //     <!-- а не добавлять новую. -->
+        // <!-- 3. Покупка продукта. Функция принимает название продукта -->
+        // <!-- и отмечает его как купленный. -->
+        //
+        //     <!-- class Product -->
+        // <!-- { -->
+        //     <!-- constructor(name, quantity, bysale){ -->
+        //         <!-- this.name=name; -->
+        //         <!-- this.quantity=quantity; -->
+        //         <!-- this.bysale=bysale; -->
+        //         <!-- } -->
+        //     <!-- display(){ -->
+        //         <!-- console.log(this.name, this.quantity, this.bysale); -->
+        //         <!-- } -->
+        //     <!-- } -->
+        // <!-- let products = []; -->
+        // <!-- let p0 = new Product ('product1', 10, true); -->
+        // <!-- let p1 = new Product ('product2', 20, false); -->
+        // <!-- let p2 = new Product ('product3', 30, true); -->
+        // <!-- products.push(p0); -->
+        // <!-- products.push(p1); -->
+        // <!-- products.push(p2); -->
+        // <!-- //Задание 1 -->
+        // <!-- function compareBySale(p0,p1) -->
+        // <!-- { -->
+        //     <!-- if(p0.bysale==false && p1.bysale==true) {return -1}; -->
+        //     <!-- if(p1.bysale==false && p0.bysale==true) {return 1}; -->
+        //     <!-- } -->
+        // <!-- function displayall() -->
+        // <!-- { -->
+        //     <!-- products.sort(compareBySale); -->
+        //     <!-- for(let i=0; i<products.length; i++){ -->
+        //         <!-- products[i].display(); -->
+        //         <!-- } -->
+        //     <!-- } -->
+        // <!-- displayall(); -->
+        // <!-- //Задание 2 -->
+        // <!-- function bayProduct(p) -->
+        // <!-- { -->
+        //     <!-- p.quantity ++; -->
+        //     <!-- } -->
+        // <!-- bayProduct(p0); -->
+        // <!-- p0.display(); -->
+        // <!-- //Задание 3 -->
+        // <!-- function BySale(p) -->
+        // <!-- { -->
+        //     <!-- p.bysale = true; -->
+        //     <!-- } -->
+        // <!-- p1.display(); -->
+        // <!-- BySale(p1); -->
+        // <!-- p1.display(); -->
+        //
+        //
+        //
+        // <!-- Задание 2 -->
+        // <!-- Создать массив, описывающий чек в магазине. Каждый эле- -->
+        // <!-- мент массива состоит из названия товара, количества и цены за -->
+        // <!-- единицу товара. Написать следующие функции. -->
+        // <!-- 1. Распечатка чека на экран. -->
+        // <!-- 2. Подсчет общей суммы покупки. -->
+        // <!-- 3. Получение самой дорогой покупки в чеке. -->
+        // <!-- 4. Подсчет средней стоимости одного товара в чеке. -->
+        //
+        //     <!-- class Product -->
+        // <!-- { -->
+        //     <!-- constructor(name, quantity, price){ -->
+        //         <!-- this.name=name; -->
+        //         <!-- this.quantity=quantity; -->
+        //         <!-- this.price=price; -->
+        //         <!-- } -->
+        //     <!-- display(){ -->
+        //         <!-- console.log(this.name, this.quantity, this.price); -->
+        //         <!-- } -->
+        //     <!-- } -->
+        //
+        // <!-- let receipt = []; -->
+        // <!-- let p0 = new Product ('product1', 10, 10); -->
+        // <!-- let p1 = new Product ('product2', 20, 20); -->
+        // <!-- let p2 = new Product ('product3', 30, 30); -->
+        // <!-- receipt.push(p0); -->
+        // <!-- receipt.push(p1); -->
+        // <!-- receipt.push(p2); -->
+        // <!-- //Задание 1 -->
+        // <!-- p0.display(); -->
+        // <!-- //Задание 2 -->
+        // <!-- function totalCost() -->
+        // <!-- { -->
+        //     <!-- let sum = 0; -->
+        //     <!-- for(let i=0; i<receipt.length; i++){ -->
+        //         <!-- sum += receipt[i].quantity * receipt[i].price; -->
+        //         <!-- } -->
+        //     <!-- console.log ("Общая сумма покупки " + sum); -->
+        //     <!-- } -->
+        // <!-- totalCost(); -->
+        // <!-- //Задание 3 -->
+        // <!-- function maxSale() -->
+        // <!-- { -->
+        //     <!-- let max = 0; -->
+        //     <!-- for(let i=0; i<receipt.length; i++){ -->
+        //         <!-- if (receipt[i].quantity * receipt[i].price > max) -->
+        //         <!-- { -->
+        //             <!-- max = receipt[i].quantity * receipt[i].price; -->
+        //             <!-- } -->
+        //         <!-- } -->
+        //     <!-- console.log ("Максимальная покупка " + max); -->
+        //     <!-- } -->
+        // <!-- maxSale(); -->
+        // <!-- //Задание 4 -->
+        // <!-- function avgPrice() -->
+        // <!-- { -->
+        //     <!-- let sum = 0; -->
+        //     <!-- let quanprod = 0; -->
+        //     <!-- for(let i=0; i<receipt.length; i++){ -->
+        //         <!-- sum += receipt[i].quantity * receipt[i].price; -->
+        //         <!-- quanprod += receipt[i].quantity; -->
+        //         <!-- } -->
+        //     <!-- console.log ("Средняя стоимость товара " + (sum / quanprod).toFixed(2)); -->
+        //     <!-- } -->
+        // <!-- avgPrice(); -->
+        //
+        //
+        //
+        // <!-- Задание 3 -->
+        // <!-- Создать массив css-стилей (цвет, размер шрифта, выравнива- -->
+        // <!-- ние, подчеркивание и т. д.). Каждый элемент массива – это объ- -->
+        // <!-- ект, состоящий из двух свойств: название стиля и значение стиля. -->
+        //     <!-- Написать функцию, которая принимает массив стилей и -->
+        // <!-- текст, и выводит этот текст с помощью document.write() в тегах -->
+        // <!-- <p></p>, добавив в открывающий тег атрибут style со всеми сти- -->
+        // <!-- лями, перечисленными в массиве. -->
+
+        // class style {
+        //     constructor(name_style, value_style){
+        //         this.name_style = name_style;
+        //         this.value_style = value_style;
+        //     }
+        //     getstyle (){
+        //         return (this.name_style + ":" + this.value_style);
+        // }
+        // }
+        //
+        // let style_1 = new style("color", "red");
+        // let style_2 = new style("font-size", "32px");
+        // let style_3 = new style("text-align", "justify");
+        // let style_4 = new style("text-decoration", "underline");
+        // let styles = [];
+        // styles.push(style_1, style_2, style_3, style_4);
+        //
+        // function write_F(txt, styles) {
+        //     for (let i=0; i < styles.length; i++) {
+        //         document.write(`<p style="${styles[i].getstyle()}">${txt}</p>`);
+        //     }
+        // }
+        //
+        // write_F('aaaa', styles);
+
+        // Задание 4
+        // Создать массив аудиторий академии. Объект-аудитория со-
+        // стоит из названия, количества посадочных мест (от 10 до 20) и
+        // названия факультета, для которого она предназначена.
+        //     Написать несколько функций для работы с ним.
+        // 1. Вывод на экран всех аудиторий.
+        // 2. Вывод на экран аудиторий для указанного факультета.
+        // 3. Вывод на экран только тех аудиторий, которые подходят для
+        // переданной группы. Объект-группа состоит из названия,
+        //     количества студентов и названия факультета.
+        // 4. Функция сортировки аудиторий по количеству мест.
+        // 5. Функция сортировки аудиторий по названию (по алфа-
+        // виту).
+
+        class room {
+            constructor(name, places, fac) {
+                this.name = name;
+                this.places = places;
+                this.fac = fac;
+            }
+        }
+
+        let r1 = new room("r1", 10, "f1");
+        let r2 = new room("r2", 25, "f1");
+        let r3 = new room("r3", 20, "f2");
+        let rooms = [r1, r2, r3];
+        // zad 1
+        function view_all() {
+            for (let i=0; i<rooms.length; i++){
+                document.write(`<p>room ${rooms[i].name} places ${rooms[i].places} Faculty ${rooms[i].fac}</p>`);
+            }
+        }
+        view_all();
+        // zad 2
+        function view_f(fak) {
+            for (let i=0; i<rooms.length; i++){
+                if (rooms[i].fac === fak) {
+                    document.write(`<p>room ${rooms[i].name} places ${rooms[i].places} Faculty ${rooms[i].fac}</p>`);
+                }
+            }
+        }
+        view_f('f1');
+        // zad 3
+        class group {
+            constructor(name, count, fac) {
+                this.name = name;
+                this.count = count;
+                this.fac = fac;
+            }
+        }
+        let g1 = new group("g1", 10, "f1");
+        let g2 = new room("g2", 15, "f1");
+        let g3 = new room("g3", 20, "f2");
+        function view_g(group) {
+            for (let i=0; i<rooms.length; i++){
+                if (group.fac === rooms[i].fac) {
+                    document.write(`<p>room ${rooms[i].name} places ${rooms[i].places} Faculty ${rooms[i].fac}</p>`);
+                }
+            }
+        }
+        view_g(g3);
+        // zad 4
+        function compare(r1,r2)
         {
-            constructor(name, quantity, bysale){
-                this.name=name;
-                this.quantity=quantity;
-                this.bysale=bysale;
+            if(r1.places > r2.places) {return -1}
+            if(r2.places > r1.places) {return 1}
+             }
+        function sort_places()
+        {
+            rooms.sort(compare);
+            view_all();
             }
-
-            display(){
-                console.log(this.name, this.quantity, this.bysale);
-            }
+        sort_places();
+        // zad 5
+        function compare_abc(r1,r2)
+        {
+            if(r1.name > r2.name) {return 1}
+            if(r2.name > r1.name) {return -1}
         }
-
-        let products = [];
-        p0 = new Product ('product1', 10, true);
-
-        p1 = new Product ('product2', 20, true);
-
-        p2 = new Product ('product3', 30, true);
-        products.push(p0);
-        products.push(p1);
-        products.push(p2);
-        products[0].display();
-
-        for(item in products){
-            item.display();
+        function sort_abc()
+        {
+            rooms.sort(compare_abc);
+            view_all();
         }
-
+        sort_abc();
     </script>
 </body>
 </html>
